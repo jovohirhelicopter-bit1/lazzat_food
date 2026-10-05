@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff8ef">
+  <title>Buyurtma — Lazzat</title>
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav">
+  <a class="brand" href="/"><span class="brandmark"><i class="fa-solid fa-burger"></i></span><span><b>LAZZAT</b><small>FAST FOOD</small></span></a>
+  <div class="nav-actions"><span class="pill" id="tgBadge" style="display:none"><i class="fa-brands fa-telegram"></i> Telegram</span><a class="pill" href="/"><i class="fa-solid fa-house"></i> Bosh sahifa</a></div>
+</div></header>
+<main class="order-wrap"><div class="container">
+  <div class="order-top"><div><span class="section-kicker">LAZZAT</span><h1>Buyurtma bering</h1><div class="muted">Taomni tanlang, savatchani tekshiring va buyurtmani yuboring.</div></div><div class="order-tip"><i class="fa-solid fa-bolt"></i> Tez va qulay</div></div>
+  <div id="authPanel" class="panel auth-panel"></div>
+  <div class="order-layout">
+    <section class="panel menu-panel">
+      <div class="searchbar"><div class="search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input id="search" placeholder="Menyudan qidirish..." aria-label="Menyudan qidirish"></div><button class="pill" id="clearSearch"><i class="fa-solid fa-xmark"></i> Tozalash</button></div>
+      <div class="categories" id="categories"></div>
+      <div class="products" id="products"></div>
+    </section>
+    <aside class="panel sticky cart-panel">
+      <div class="cart-heading"><h2><i class="fa-solid fa-cart-shopping"></i> Savatcha</h2><span class="pill" id="cartCountLabel">0 ta</span></div>
+      <div id="cart" class="cart-list"></div>
+      <div id="checkout" style="display:none"><div class="sum"><span>Mahsulotlar</span><strong id="subTotal">0</strong></div><div class="sum"><span>Yetkazib berish</span><strong>Bepul</strong></div><div class="sum total"><span>Jami</span><strong id="cartTotal">0</strong></div>
+        <div class="field"><label>Ism</label><div class="input-icon"><i class="fa-solid fa-user"></i><input id="customerName" placeholder="Ismingiz"></div></div>
+        <div class="form-row"><div class="field"><label>Telefon</label><div class="input-icon"><i class="fa-solid fa-phone"></i><input id="customerPhone" placeholder="+998 90 123 45 67"></div></div><div class="field"><label>To‘lov</label><div class="input-icon select-icon"><i class="fa-solid fa-wallet"></i><select id="payment"><option value="cash">Naqd</option><option value="card">Karta</option></select></div></div></div>
+        <div class="field"><label>Yetkazib berish manzili</label><div class="input-icon textarea-icon"><i class="fa-solid fa-location-dot"></i><textarea id="address" placeholder="Uy, ko‘cha, mo‘ljal..."></textarea></div></div>
+        <div class="notice" id="orderNotice"></div><button class="btn btn-primary" style="width:100%;margin-top:12px" id="placeOrder"><i class="fa-solid fa-paper-plane"></i> Buyurtmani yuborish</button>
+      </div>
+      <div id="emptyCart" class="empty cart-empty"><i class="fa-solid fa-basket-shopping"></i><br>Savatchangiz hozircha bo‘sh.<br><span>Taomlardan birini tanlang.</span></div>
+      <div id="successBox" class="success-box"><div class="success-icon"><i class="fa-solid fa-check"></i></div><h2>Buyurtma qabul qilindi!</h2><p class="muted" id="successText"></p><a class="btn btn-secondary" href="/order.html"><i class="fa-solid fa-plus"></i> Yana buyurtma berish</a></div>
+    </aside>
+  </div>
+</div></main>
+<div id="miniCart" class="mini-cart" style="display:none"><span><strong id="miniCount">0</strong> ta · <strong id="miniTotal">0</strong></span><button onclick="document.querySelector('.sticky').scrollIntoView({behavior:'smooth',block:'start'})"><i class="fa-solid fa-cart-shopping"></i> Savatcha</button></div><div id="toast" class="toast"></div>
+<script src="/app.js"></script>
+</body></html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff8ef">
+  <title>Lazzat — Fast Food & Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="landing">
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="/">
+      <span class="brandmark"><i class="fa-solid fa-burger"></i></span>
+      <span><b>LAZZAT</b><small>FAST FOOD</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#menu">Menyu</a>
+      <a href="#about">Biz haqimizda</a>
+      <a href="#delivery">Yetkazib berish</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-link" href="/order.html" aria-label="Savatcha"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a class="btn btn-primary btn-small" href="/order.html"><i class="fa-solid fa-bag-shopping"></i> Buyurtma</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero-section">
+    <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow"><i class="fa-solid fa-fire-flame-curved"></i> Har kuni yangi va issiq</div>
+        <h1>Ta’mli lahzalar <span>shu yerdan</span> boshlanadi.</h1>
+        <p>Qarsildoq burgerlar, mazali pizza, issiq fri va do‘stlar bilan ulashishga arzigulik combo’lar. Buyurtma berish esa juda oson.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/order.html"><i class="fa-solid fa-utensils"></i> Menyuni ko‘rish</a>
+          <a class="btn btn-secondary" href="https://t.me/UzbekFoodNewBot" target="_blank" rel="noreferrer"><i class="fa-brands fa-telegram"></i> Telegram bot</a>
+        </div>
+        <div class="hero-stat">
+          <div class="stat"><strong>15–30</strong><span>daqiqada yetkazish</span></div>
+          <div class="stat"><strong>8+</strong><span>mazali taomlar</span></div>
+          <div class="stat"><strong>4.9</strong><span>mijozlar bahosi</span></div>
+        </div>
+      </div>
+      <div class="hero-card-wrap">
+        <div class="hero-card">
+          <div class="hero-card-top"><span class="deal-chip"><i class="fa-solid fa-star"></i> Bugungi favorit</span><span class="rating"><i class="fa-solid fa-star"></i> 4.9</span></div>
+          <div class="hero-food"><img src="/assets/burger.svg" alt="Lazzat burger"></div>
+          <div class="hero-card-bottom">
+            <div><small>Bugungi tanlov</small><h2>Maxsus Lazzat Burger</h2><p><i class="fa-solid fa-check"></i> Mol go‘shti · pishloq · maxsus sous</p></div>
+            <strong>39 000</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu"><div class="container">
+    <div class="section-head"><div><span class="section-kicker">MENYU</span><h2>Ko‘p tanlanadiganlar</h2><p>Bugun nima yeysiz? Eng sevimli taomlar shu yerda.</p></div><a class="text-link" href="/order.html">To‘liq menyu <i class="fa-solid fa-arrow-right"></i></a></div>
+    <div class="products" id="featuredProducts"></div>
+  </div></section>
+
+  <section class="section soft-section" id="about"><div class="container">
+    <div class="section-head"><div><span class="section-kicker">NEGA LAZZAT?</span><h2>Restorandagi qulaylik — uyda ham.</h2></div></div>
+    <div class="benefit-grid">
+      <article class="benefit"><div class="benefit-icon"><i class="fa-solid fa-burger"></i></div><h3>Yangi tayyorlanadi</h3><p>Taomlar buyurtmangizga mos ravishda tayyorlanadi.</p></article>
+      <article class="benefit"><div class="benefit-icon"><i class="fa-solid fa-truck-fast"></i></div><h3>Tez yetkazamiz</h3><p>Manzilingizga tez va ehtiyotkor yetkazib beramiz.</p></article>
+      <article class="benefit"><div class="benefit-icon"><i class="fa-solid fa-headset"></i></div><h3>Yordam doim bor</h3><p>Telegram bot orqali savol va buyurtmalarni boshqaring.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section delivery-section" id="delivery"><div class="container delivery-card">
+    <div><span class="section-kicker">YETKAZIB BERISH</span><h2>Och, mazali va eshigingizgacha.</h2><p>Buyurtma berish uchun menyudan taomlarni tanlang, manzilingizni kiriting va yuboring.</p><a class="btn btn-primary" href="/order.html"><i class="fa-solid fa-location-dot"></i> Buyurtma berish</a></div>
+    <div class="delivery-visual"><i class="fa-solid fa-motorcycle"></i><span>15–30 daq</span><small>Tayyor → Yo‘lda → Eshik oldida</small></div>
+  </div></section>
+</main>
+
+<footer class="footer"><div class="container footer-row"><div><b>LAZZAT</b> — fast food & restaurant</div><div><i class="fa-solid fa-phone"></i> Aloqa · <i class="fa-brands fa-telegram"></i> Telegram</div></div></footer>
+<script>
+const money=n=>`${Number(n).toLocaleString('uz-UZ')} so‘m`;
+fetch('/api/products').then(r=>r.json()).then(({products})=>{
+  const el=document.getElementById('featuredProducts');
+  el.innerHTML=products.filter(p=>p.popular).slice(0,4).map(p=>`<article class="product"><div class="product-media"><span class="tag"><i class="fa-solid fa-star"></i> Top</span><img src="${p.image}" alt="${p.name}"></div><div class="product-info"><div class="product-category">${p.category}</div><h3>${p.name}</h3><div class="desc">${p.desc}</div><div class="product-bottom"><div class="price">${money(p.price)}</div><a class="add" href="/order.html?product=${encodeURIComponent(p.id)}" aria-label="Savatchaga qo‘shish"><i class="fa-solid fa-plus"></i></a></div></div></article>`).join('');
+}).catch(()=>document.getElementById('featuredProducts').innerHTML='<div class="empty">Menyu yuklanmadi. Serverni tekshiring.</div>');
+</script>
+</body></html>
